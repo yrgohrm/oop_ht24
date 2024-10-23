@@ -1,0 +1,7 @@
+ACME AB
+Lena Lamm, VD, 0
+Nils Nilsson, Ingenjör, 10000
+Bosse Bredsladd, Utvecklare, 10000
+Leyla Smith, Ekonomichef, 10000
+Lasse Larsson, Måltidsbiträde, 10000
+Pålle Kanin, Företagsdjur, 10000
