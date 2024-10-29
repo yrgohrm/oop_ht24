@@ -57,32 +57,27 @@ public class AddressOld {
         if (name == null) {
             if (other.name != null)
                 return false;
-        }
-        else if (!name.equals(other.name))
+        } else if (!name.equals(other.name))
             return false;
         if (street == null) {
             if (other.street != null)
                 return false;
-        }
-        else if (!street.equals(other.street))
+        } else if (!street.equals(other.street))
             return false;
         if (zipCode == null) {
             if (other.zipCode != null)
                 return false;
-        }
-        else if (!zipCode.equals(other.zipCode))
+        } else if (!zipCode.equals(other.zipCode))
             return false;
         if (city == null) {
             if (other.city != null)
                 return false;
-        }
-        else if (!city.equals(other.city))
+        } else if (!city.equals(other.city))
             return false;
         if (country == null) {
             if (other.country != null)
                 return false;
-        }
-        else if (!country.equals(other.country))
+        } else if (!country.equals(other.country))
             return false;
         return true;
     }

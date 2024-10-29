@@ -4,15 +4,34 @@ public record City(String name, double lon, double lat) {
    
     public static List<City> rank(List<City> cities) {
         record CityWithDistance(City city, double dist) {}
-
+    
         final City gothenburg = new City("Göteborg", 57.705552, 11.936153);
-
+    
         return cities.stream()
                  .map(c -> new CityWithDistance(c, distance(c, gothenburg)))
-                 .sorted((c1, c2) -> Double.compare(c1.dist(), c2.dist()))
+                 .sorted(Comparator.comparingDouble(CityWithDistance::dist))
                  .map(CityWithDistance::city)
                  .toList();
     }
+
+    // public static List<City> rank(List<City> cities) {
+    //     record CityWithDistance(City city, double dist) {}
+    
+    //     City gothenburg = new City("Göteborg", 57.7055529, 11.9361537);
+    //     List<CityWithDistance> distances = new ArrayList<>();
+    //     for (City c : cities) {
+    //         distances.add(new CityWithDistance(c, distance(c, gothenburg)));
+    //     }
+     
+    //     List<City> result = new ArrayList<>();
+    //     distances.sort(Comparator.comparingDouble(CityWithDistance::dist));
+    //     for (CityWithDistance cwd : distances) {
+    //         result.add(cwd.city());
+    //     }
+    
+    //     return result;
+    // }
+
 
     public static double distance(City c1, City c2) {
         double lonVal = Math.pow(c1.lon() - c2.lon(), 2);
